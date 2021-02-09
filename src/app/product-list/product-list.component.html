@@ -6,9 +6,10 @@
   <p *ngIf="product.description">Description:{{product.description}}</p>
   <br />
   <button (click)="share()">
-    Share</button
-  ><br />
-  <button *ngIf="product.price>600">Notify</button>
+    Share
+  </button>
+  <br />
+  <app-product-alert [productinput]="product" (notifyMe)="onNotify()"> </app-product-alert>
   <hr />
 </div>
 
