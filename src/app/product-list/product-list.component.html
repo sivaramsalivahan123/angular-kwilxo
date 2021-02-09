@@ -4,10 +4,12 @@
     {{product.name}}
   </a>
   <p *ngIf="product.description">Description:{{product.description}}</p>
-  <br>
+  <br />
   <button (click)="share()">
-    Share
-  </button>
+    Share</button
+  ><br />
+  <button *ngIf="product.price>600">Notify</button>
+  <hr />
 </div>
 
 <!-- 
