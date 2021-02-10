@@ -8,12 +8,16 @@ import { TopBarComponent } from "./top-bar/top-bar.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { ProductAlertComponent } from "./product-alert/product-alert.component";
 import { ProductDetailsComponent } from "./product-details/product-details.component";
+import { CartService } from './cart.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([{ path: "", component: ProductListComponent }])
+    RouterModule.forRoot([
+      { path: "", component: ProductListComponent },
+      { path: "product/:productId", component: ProductDetailsComponent }
+    ])
   ],
   declarations: [
     AppComponent,
@@ -22,7 +26,8 @@ import { ProductDetailsComponent } from "./product-details/product-details.compo
     ProductAlertComponent,
     ProductDetailsComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [CartService]
 })
 export class AppModule {}
 
